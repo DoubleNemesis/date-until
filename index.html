@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date until</title>
+</head>
+
+<body>
+    <h1>The days until...</h1>
+    <p id="ws"></p>
+    <p id="stage1"></p>
+
+
+    <script>
+        const ws = document.getElementById('ws')
+        const stage1 = document.getElementById('stage1')
+        let myEndDates = []
+        let daysLeft = []
+
+        today = new Date();
+        let oct21 = new Date(today.getFullYear(), 9, 21);
+        let nov14 = new Date(today.getFullYear(), 10, 14);
+        myEndDates.push(oct21)
+        myEndDates.push(nov14)
+
+        let one_day = 1000 * 60 * 60 * 24;
+
+        myEndDates.forEach((elem) => {
+            daysLeft.push((Math.ceil((elem.getTime() - today.getTime()) / (one_day)))
+            )
+        })
+        ws.innerText = daysLeft[0]
+        stage1.innerText = daysLeft[1]
+
+
+    </script>
+</body>
+
+</html>
