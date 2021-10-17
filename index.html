@@ -10,19 +10,25 @@
 
 <body>
     <h1>The days until...</h1>
-    <div>Week Over <span id="ws"></span></div>
-    <div>Week Over hours <span id="wsh"></span></div>
-    <div>Month Over <span id="stage1"></span></div>
-    <div>Month Over Hours <span id="stage1h"></span></div>
+    <div>Days until week 1 is over <span id="daysw1"></span></div>
+    <div>Hours until week 1 is over <span id="hoursw1"></span></div>
+    <div>Minutes until week 1 is over <span id="minsw1"></span></div>
+    <div>Days until month 1 is over <span id="daysm1"></span></div>
+    <div>Hours until month 1 is over <span id="hoursm1"></span></div>
+    <div>Minutes until month 1 is over <span id="minsm1"></span></div>
 
 
     <script>
-        const ws = document.getElementById('ws')
-        const wsh = document.getElementById('wsh')
-        const stage1 = document.getElementById('stage1')
-        const stage1h = document.getElementById('stage1h')
+        const daysw1 = document.getElementById('daysw1')
+        const hoursw1 = document.getElementById('hoursw1')
+        const minssw1 = document.getElementById('minsw1')
+        const daysm1 = document.getElementById('daysm1')
+        const hoursm1 = document.getElementById('hoursm1')
+        const minsm1 = document.getElementById('minsm1')
         let myEndDates = []
         let daysLeft = []
+        let hoursLeft = []
+        let minutesLeft = []
 
         today = new Date();
         let oct21 = new Date(today.getFullYear(), 9, 21);
@@ -31,15 +37,27 @@
         myEndDates.push(nov14)
 
         let one_day = 1000 * 60 * 60 * 24;
+        let one_hour = 1000 * 60 * 60;
+        let one_minute = 1000 * 60;
 
         myEndDates.forEach((elem) => {
             daysLeft.push((Math.ceil((elem.getTime() - today.getTime()) / (one_day)))
             )
         })
-        ws.innerText = daysLeft[0]
-        wsh.innerText = daysLeft[0]*24
-        stage1.innerText = daysLeft[1]
-        stage1h.innerText = daysLeft[1]*24
+        myEndDates.forEach((elem) => {
+            hoursLeft.push((Math.ceil((elem.getTime() - today.getTime()) / (one_hour)))
+            )
+        })
+        myEndDates.forEach((elem) => {
+            minutesLeft.push((Math.ceil((elem.getTime() - today.getTime()) / (one_minute)))
+            )
+        })
+        daysw1.innerText = daysLeft[0]
+        hoursw1.innerText = hoursLeft[0]
+        minsw1.innerText = minutesLeft[0]
+        daysm1.innerText = daysLeft[1]
+        hoursm1.innerText = hoursLeft[1]
+        minsm1.innerText = minutesLeft[1]
 
 
     </script>
