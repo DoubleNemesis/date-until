@@ -10,13 +10,17 @@
 
 <body>
     <h1>The days until...</h1>
-    <span>W</span><p id="ws"></p>
-    <span>week</span><p id="stage1"></p>
+    <span>Week Over<p id="ws"></p></span>
+    <span>Week Over hours<p id="wsh"></p></span>
+    <span>Month Over<p id="stage1"></p></span>
+    <span>Month Over Hours<p id="stage1h"></p></span>
 
 
     <script>
         const ws = document.getElementById('ws')
+        const wsh = document.getElementById('wsh')
         const stage1 = document.getElementById('stage1')
+        const stage1h = document.getElementById('stage1h')
         let myEndDates = []
         let daysLeft = []
 
@@ -33,7 +37,9 @@
             )
         })
         ws.innerText = daysLeft[0]
+        wsh.innerText = daysLeft[0]*24
         stage1.innerText = daysLeft[1]
+        stage1s.innerText = daysLeft[1]*24
 
 
     </script>
