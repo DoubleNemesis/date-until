@@ -10,10 +10,10 @@
 
 <body>
     <h1>The days until...</h1>
-    <span>Week Over<p id="ws"></p></span>
-    <span>Week Over hours<p id="wsh"></p></span>
-    <span>Month Over<p id="stage1"></p></span>
-    <span>Month Over Hours<p id="stage1h"></p></span>
+    <div>Week Over<span id="ws"></span></div>
+    <div>Week Over hours<span id="wsh"></span></div>
+    <div>Month Over<span id="stage1"></span></div>
+    <div>Month Over Hours<span id="stage1h"></span></div>
 
 
     <script>
@@ -39,7 +39,7 @@
         ws.innerText = daysLeft[0]
         wsh.innerText = daysLeft[0]*24
         stage1.innerText = daysLeft[1]
-        stage1s.innerText = daysLeft[1]*24
+        stage1h.innerText = daysLeft[1]*24
 
 
     </script>
